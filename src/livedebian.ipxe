@@ -30,7 +30,7 @@ goto livedebian_boot
 set webboot_host cdimage.debian.org
 set livedebian_url http://cdimage.debian.org/cdimage/archive/${livedebian_version}-live/amd64/webboot/debian-live-${livedebian_version}-amd64-${flavor}
 imgfree
-kernel ${livedebian_url}.vmlinuz boot=live config ip=10.44.181.105:255.255.255.0:10.44.181.1:1.1.1.1 hooks=filesystem username=live noeject ${console} fetch=${livedebian_url}.squashfs initrd=debian-live-${livedebian_version}-amd64-${flavor}.initrd.img
+kernel ${livedebian_url}.vmlinuz boot=live config hooks=filesystem username=live noeject ${console} fetch=${livedebian_url}.squashfs initrd=debian-live-${livedebian_version}-amd64-${flavor}.initrd.img ip=10.44.181.105:255.255.255.0:10.44.181.1:1.1.1.1
 module ${livedebian_url}.initrd.img
 # used to resolve DNS
 module http://${boot_domain}/live-helpers/debian/libresolv.so.2 /lib/libresolv.so.2
